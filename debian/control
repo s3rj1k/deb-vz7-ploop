@@ -1,0 +1,44 @@
+Source: ploop
+Section: libs
+Priority: optional
+Maintainer: s3rj1k <evasive.gyron@gmail.com>
+Build-Depends: debhelper (>= 9), e2fslibs-dev, libxml2-dev, uuid-dev, libjson-c-dev, python2.7-dev, pkg-config
+Standards-Version: 3.9.6
+Homepage: https://wiki.openvz.org/Ploop
+
+Package: ploop
+Section: admin
+Architecture: amd64
+Depends: ${shlibs:Depends}, ${misc:Depends}, libploop7 (= ${binary:Version})
+Description: tools to work with ploop devices and images
+ Ploop is a disk loopback block device, not unlike loop but with many
+ features like dynamic resize, snapshots, backups etc. The main idea is to
+ put container filesystem in a file.
+ .
+ This package contains tools to work with ploop devices and images.
+
+Package: libploop-dev
+Section: libdevel
+Architecture: amd64
+Depends: libploop7 (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
+Description: ploop API development library
+ Ploop is a disk loopback block device, not unlike loop but with many
+ features like dynamic resize, snapshots, backups etc. The main idea is to
+ put container filesystem in a file.
+ .
+ This package contains headers and a static version of Parallels loopback
+ (ploop) block device API library.
+
+Package: libploop7
+Architecture: amd64
+Multi-Arch: same
+Depends: ${shlibs:Depends}, ${misc:Depends}, parted, e2fsprogs
+Recommends: lsof
+Pre-Depends: ${misc:Pre-Depends}
+Description: ploop API library
+ Ploop is a disk loopback block device, not unlike loop but with many
+ features like dynamic resize, snapshots, backups etc. The main idea is to
+ put container filesystem in a file.
+ .
+ This package contains the library for Parallels loopback (ploop) block
+ device API.

@@ -1,0 +1,13 @@
+Index: BUILD/tools/ploop-volume.c
+===================================================================
+--- BUILD.orig/tools/ploop-volume.c
++++ BUILD/tools/ploop-volume.c
+@@ -30,7 +30,7 @@
+ #include <string.h>
+ #include <limits.h>
+ 
+-#include <json/json.h>
++#include <json-c/json.h>
+ 
+ #include "ploop.h"
+ #include "libvolume.h"

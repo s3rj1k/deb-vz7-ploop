@@ -1,0 +1,8 @@
+# upstream has no man pages
+ploop: binary-without-manpage sbin/mount.ploop
+ploop: binary-without-manpage sbin/umount.ploop
+ploop: binary-without-manpage usr/sbin/ploop-balloon
+ploop: binary-without-manpage usr/sbin/ploop-cbt
+ploop: binary-without-manpage usr/sbin/ploop-volume
+# ignore changelog bug, not debian upstream package
+ploop: new-package-should-close-itp-bug

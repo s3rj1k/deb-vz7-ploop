@@ -1,0 +1,6 @@
+# ignore changelog bug, not debian upstream package
+libploop7: new-package-should-close-itp-bug
+# using openssl
+libploop7: possible-gpl-code-linked-with-openssl
+# using any version of e2fsprogs for compatibility
+libploop7: depends-on-essential-package-without-using-version depends: e2fsprogs
