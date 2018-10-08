@@ -1,11 +1,16 @@
 #!/bin/bash
 
-REPONAME="ploop"
-VERSION="7.0.131"
+# fetch - fetches sources from openvz git for specified reponame and release tag and makes orig.tar
+function fetch() {
+  REPONAME="${1}"
+  VERSION="${2}"
+  TAG="v${VERSION}"
+  URL="https://src.openvz.org/scm/ovz/${REPONAME}.git"
 
-TAG="v${VERSION}"
-URL="https://src.openvz.org/scm/ovz/${REPONAME}.git"
+  git clone --quiet --depth 1 --branch ${TAG} ${URL} ${REPONAME}-${VERSION} &>/dev/null \
+    && tar --exclude-vcs -cf ${REPONAME}_${VERSION}.orig.tar ${REPONAME}-${VERSION} \
+    && rm -rf ${REPONAME}-${VERSION}
+}
 
-git clone --quiet --depth 1 --branch ${TAG} ${URL} ${REPONAME}-${VERSION} &>/dev/null \
-  && tar --exclude-vcs -cf ${REPONAME}_${VERSION}.orig.tar ${REPONAME}-${VERSION} \
-  && rm -rf ${REPONAME}-${VERSION}
+# ploop
+fetch "ploop" "7.0.131"
