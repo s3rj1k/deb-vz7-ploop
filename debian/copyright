@@ -1,6 +1,6 @@
 Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: ploop
-Source: http://download.openvz.org/utils/ploop
+Source: https://src.openvz.org/projects/OVZ/repos/ploop
 
 Files: *
 Copyright: 2008-2018, Parallels, Inc.

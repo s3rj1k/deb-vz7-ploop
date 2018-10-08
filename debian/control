@@ -4,7 +4,6 @@ Priority: optional
 Maintainer: s3rj1k <evasive.gyron@gmail.com>
 Build-Depends: debhelper (>= 9), e2fslibs-dev, libxml2-dev, uuid-dev, libjson-c-dev, python2.7-dev, pkg-config
 Standards-Version: 3.9.6
-Homepage: https://wiki.openvz.org/Ploop
 
 Package: ploop
 Section: admin
